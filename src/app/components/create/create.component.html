@@ -16,13 +16,14 @@
 
     <!-- This section shows only if user clicks Edit button -->
     <div *ngIf="!editable">
+
        <h1>Edit the task</h1>
        <input  class="lg-text-input"
        id="addItemInput" placeholder="edit item" [value]="item.description" #editedItem (keyup.enter)="saveItem(editedItem.value)">
     
        <div class="btn-wrapper">
          <button class="btn-primary" (click)="editable = !editable">Cancel</button>
-         <button class="btn-primary" (click)="saveItem(editedItem.value)">Save</button>
+         <button class="btn-primary" (click)="saveItem(editedItem.value)" routerLink="/">Save</button>
        </div>
      </div>
      

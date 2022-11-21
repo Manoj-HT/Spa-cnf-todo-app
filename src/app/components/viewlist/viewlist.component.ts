@@ -10,21 +10,20 @@ import { SendcompdataService } from 'src/app/services/sendcompdata.service';
 export class ViewlistComponent implements OnInit {
 
   editable = false;
-  constructor(private editSend : SendcompdataService) { }
+  constructor(private editSend : SendcompdataService,
+              private recieveDesc : SendcompdataService) { }
 
   ngOnInit(): void {
   }
+    
+  //needed for body//
   @Input() item!: Item;
   @Input() newItem!: string;
   @Output() remove = new EventEmitter<Item>();
-  
-  saveItem(description: string) {
-    if (!description) return;
-    this.editable = false;
-    this.item.description = description;
-  }
-  
+
   sendEditable(){
     return this.editSend.recieveFromView(this.editable)
   }
+
+  desc=this.recieveDesc.sendDescription()
 }

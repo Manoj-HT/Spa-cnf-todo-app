@@ -1,31 +1,39 @@
 <div class="main">
-      <div class="btn-wrapper">
+  <div class="btn-wrapper">
     <button
       class="btn btn-menu"
       [class.active]="filter == 'all'"
-      (click)="filter = 'all'">
+      (click)="filter = 'all'"
+    >
       All
     </button>
 
     <button
       class="btn btn-menu"
       [class.active]="filter == 'active'"
-      (click)="filter = 'active'">
+      (click)="filter = 'active'"
+    >
       To Do
     </button>
 
     <button
       class="btn btn-menu"
       [class.active]="filter == 'done'"
-      (click)="filter = 'done'">
+      (click)="filter = 'done'"
+    >
       Done
     </button>
   </div>
 
-    <h2>{{items.length}} <span *ngIf="items.length === 1; else elseBlock">Task in Your list</span>
-        <ng-template #elseBlock>Tasks in Your List</ng-template></h2>
-        <ul>
-          <li *ngFor="let i of items">
-            <app-viewlist (remove)="remove(i)" [item]="i" ></app-viewlist>
-          </li>
-    </ul>  
+  <h2>
+    {{ items.length }}
+    <span *ngIf="items.length === 1; else elseBlock">Task in Your list</span>
+    <ng-template #elseBlock>Tasks in Your List</ng-template>
+  </h2>
+
+  <ul>
+    <li *ngFor="let i of items">
+      <app-viewlist (remove)="remove(i)" [item]="i"></app-viewlist>
+    </li>
+  </ul>
+</div>
