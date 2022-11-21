@@ -27,6 +27,6 @@
     
     <ul>
         <li *ngFor="let i of items">
-        <app-viewlist (remove)="remove(i)" [item]="i"></app-viewlist>
-        </li>
-    </ul>  
+        <app-viewlist (remove)="remove(i)" [item]="i">{{listTask}}</app-viewlist>
+ [item]="i"></app-viewlist>
+v>   

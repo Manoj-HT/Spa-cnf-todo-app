@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { SendcompdataService } from 'src/app/services/sendcompdata.service';
 
 @Component({
   selector: 'app-create',
@@ -7,21 +8,13 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
-@Input()
-  allItems = [
-    { description: 'eat', done: false },
-    { description: 'sleep', done: false },
-    { description: 'play', done: false },
-    { description: 'laugh', done: false },
-  ];
+  constructor(private taskSend : SendcompdataService) { }
+
   ngOnInit(): void {
   }
 
+//taking data in input and sending it into addItem then to setTask in sendcompdata.service.ts//
   addItem(description: string) {
-    this.allItems.unshift({
-      description,
-      done: false
-    });
-  }
+    this.taskSend.setTask(description)}
+
 }
