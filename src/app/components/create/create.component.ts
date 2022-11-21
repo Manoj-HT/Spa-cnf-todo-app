@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateComponent implements OnInit {
 
   constructor() { }
-
+@Input()
   allItems = [
     { description: 'eat', done: false },
     { description: 'sleep', done: false },

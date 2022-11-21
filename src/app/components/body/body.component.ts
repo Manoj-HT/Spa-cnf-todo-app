@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Item } from 'src/app/item';
 
 @Component({
@@ -9,6 +9,7 @@ import { Item } from 'src/app/item';
 export class BodyComponent implements OnInit {
   filter: 'all' | 'active' | 'done' = 'all';
 
+  @Output()
   allItems = [
     { description: 'eat', done: false },
     { description: 'sleep', done: false },
