@@ -6,12 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SendcompdataService {
 
-  private approvalStageMessage = new BehaviorSubject('Basic Approval is required!');
-  currentApprovalStageMessage = this.approvalStageMessage.asObservable();
-
   constructor() { }
 
-  updateApprovalMessage(message: string) {
-    this.approvalStageMessage.next(message)
-  }
 }
