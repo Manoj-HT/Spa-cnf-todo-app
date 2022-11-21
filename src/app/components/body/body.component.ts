@@ -12,6 +12,7 @@ export class BodyComponent implements OnInit {
   //recieving into a variable//
   recievedItems = this.taskRecieve.allItems;
 
+  editing:boolean =true;
   
   get items() {
     if (this.filter === 'all') {

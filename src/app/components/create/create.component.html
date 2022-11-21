@@ -1,4 +1,5 @@
 <div class="main">
+  <div *ngIf="editable">
     <h1>Create a new Task</h1>
     <label for="addItemInput">What would you like to do?</label>
     <br>
@@ -10,4 +11,19 @@
     id="addItemInput" />
 
     <button class="btn-primary" (click)="addItem(newItem.value)" routerLink="/">Add</button>
+      
+  </div>  
+
+    <!-- This section shows only if user clicks Edit button -->
+    <div *ngIf="!editable">
+       <h1>Edit the task</h1>
+       <input  class="lg-text-input"
+       id="addItemInput" placeholder="edit item" [value]="item.description" #editedItem (keyup.enter)="saveItem(editedItem.value)">
+    
+       <div class="btn-wrapper">
+         <button class="btn-primary" (click)="editable = !editable">Cancel</button>
+         <button class="btn-primary" (click)="saveItem(editedItem.value)">Save</button>
+       </div>
+     </div>
+     
 </div>

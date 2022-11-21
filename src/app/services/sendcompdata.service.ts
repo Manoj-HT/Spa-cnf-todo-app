@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Item } from 'src/app/item';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,8 @@ export class SendcompdataService {
     { description: 'laugh', done: false },
   ];
 
+  editValue = true;
+
   constructor() { }
 
   // data coming from additem in create.component.ts, array add method//
@@ -27,4 +29,13 @@ export class SendcompdataService {
       return this.allItems;
   }
 
+  recieveFromView(editRecieved : boolean){
+    this.editValue = editRecieved
+    console.log(this.editValue)
+  }
+  
+  sendToCreate(){
+    console.log(this.editValue)
+    return this.editValue
+  }
 }
