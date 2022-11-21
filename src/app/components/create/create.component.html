@@ -1,0 +1,13 @@
+<div class="main">
+    <h1>Create a new Task</h1>
+    <label for="addItemInput">What would you like to do?</label>
+    <br>
+    <input 
+    #newItem
+    placeholder="Enter the task here"
+    (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+    class="lg-text-input"
+    id="addItemInput" />
+
+    <button class="btn-primary" (click)="addItem(newItem.value)" routerLink="/">Add</button>
+</div>
