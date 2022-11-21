@@ -7,10 +7,12 @@ import { SendcompdataService } from 'src/app/services/sendcompdata.service';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-  
+  //adding filters//
   filter: 'all' | 'active' | 'done' = 'all';
+  //recieving into a variable//
   recievedItems = this.taskRecieve.allItems;
 
+  
   get items() {
     if (this.filter === 'all') {
       return this.recievedItems;
