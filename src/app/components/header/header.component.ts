@@ -12,4 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+//need to send true value when clicked//
+
 }
